@@ -96,19 +96,9 @@
     </div>
 
     <div id="nofacebook" class="page-login-rhs">
-      <a id="login-google" href="<%=googleSignInUrl%>" class="google-signin-button" target="<%= typeof(googleButtonTarget) != 'undefined' ? googleButtonTarget : '_self' %>">
-        <img src="<%=helpers.cdn()%>/static/img/goog.png">
-        <span>Sign in with <strong>Google</strong></span>
-      </a>
 
-      <% if (helpers.allowFacebookSignin()) { %>
-        <a id="login-facebook" class="fb-login-required" href="<%=request.url%>">
-          <img class="fb-connect-button" src="<%=helpers.cdn()%>/static/img/fb.png">
-          <span>Sign in with <strong>Facebook</strong></span>
-        </a>
-      <% } %>
-
-      <span id="login-or"><span class="page-login-or"></span><span class="page-login-or-lbl">or</span><span class="page-login-or"></span></span>
+      <h3>Please entry your email.</h3>
+      <span id="login-or"><span class="page-login-or"></span><span class="page-login-or-lbl"></span><span class="page-login-or"></span></span>
 
       <form id="login-form" method="post" action="/ep/account/signin">
         <%- helpers.xsrfTokenElement() %>
