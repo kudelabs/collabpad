@@ -127,7 +127,7 @@ function includeJQuery() {
     // use the local version otherwise
 
     // Use the local version no matter production or not.
-    addToHead('<script src="/static/js/jquery-1.7.2.js" type="text/javascript"></script>');
+    addToHead('<script src="/static/js/jquery-1.7.2.min.js" type="text/javascript"></script>');
     //}
     _hd().includeJQueryJs = true;
   }
