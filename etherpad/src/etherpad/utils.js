@@ -842,7 +842,8 @@ function absoluteURL(path, queryDict, opt_subDomain) {
     queryComponents.push(encodeURIComponent(k)+"="+encodeURIComponent(v));
   });
 
-  return [(appjet.config.useHttpsUrls ? "https://" : "http://"),
+  // Don't know why this isn't works, so force it to https
+  return [(appjet.config.useHttpsUrls ? "https://" : "https://"),
       subDomainStr,
       appjet.config['etherpad.canonicalDomain'],
       path,

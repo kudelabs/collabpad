@@ -202,7 +202,8 @@ function bodyId() {
 }
 
 function baseHref() {
-  return request.scheme + "://"+ request.host + "/";
+  // Don't know why this isn't works, so force it to https
+  return 'https://' + request.host + "/";
 }
 
 function headExtra() {
