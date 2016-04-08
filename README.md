@@ -18,3 +18,16 @@ For SSL should add below to apache config
 ```bash
 RequestHeader set X-Scheme 'https'
 ```
+
+# Config for hackpad
+
+
+useHttpsUrls = true
+hidePorts = true
+
+We need hide ports when we turn on SSL and using nginx/apache to proxy via no-SSL, below is the code and why we need this.
+```javascript
+if (appjet.config.listenSecurePort != "443" && !appjet.config.hidePorts) {
+  h = (h + ":" + appjet.config.listenSecurePort);
+}
+```
