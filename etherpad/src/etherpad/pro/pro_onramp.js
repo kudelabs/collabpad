@@ -105,7 +105,7 @@ function createAutoPadForUser(account, globalSourcePadId, giveOwnership) {
       if (isProduction()) {
         log.logException("The template pad ["+globalSourcePadId+"] does not exist!");
       }
-      title = "Welcome to Hackpad!";
+      title = "Welcome to Collab Cool!";
       pad.create(title, title);
     }
 

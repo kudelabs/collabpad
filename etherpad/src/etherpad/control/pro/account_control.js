@@ -734,7 +734,7 @@ function _sendEmailVerification(email, token, cont, fullName) {
   var validationUrl = utils.absoluteURL('/ep/account/validate-email',
       {email: email, token: token, cont: cont, eid: eid});
 
-  var subj = "Welcome to Hackpad! Verify your email to get started";
+  var subj = "Welcome to Collab Cool! Verify your email to get started";
   utils.sendHtmlTemplateEmail(email, subj, 'email/welcome.ejs', {
     name: fullName,
     validationUrl: validationUrl,

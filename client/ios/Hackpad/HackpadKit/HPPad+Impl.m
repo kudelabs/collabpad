@@ -220,7 +220,7 @@ managedObjectContext:(NSManagedObjectContext *)managedObjectContext
     }
 #endif
     return [self padWithID:padID
-                     title:@"Welcome to Hackpad"
+                     title:@"Welcome to Collab Cool"
                   spaceURL:[NSURL hp_sharedHackpadURL]
       managedObjectContext:managedObjectContext
                      error:error];

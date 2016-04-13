@@ -244,7 +244,7 @@ function preRequestCookieCheck() {
         P("Oops, your browser has 3rd party cookies disabled.", A({href:"#", onclick:"top.postMessage('hackpad:getcookie:"+encodeURIComponent(contURL)+"', '*'); return false"}, BR(), B("Join this hackpad now")), " so you can participate!"),
         BR());
 
-        renderFramedHtml(helpers.modalDialog("Welcome to Hackpad", content, false, "block"));
+        renderFramedHtml(helpers.modalDialog("Welcome to Collab Cool", content, false, "block"));
 
         response.stop();
       } else {
