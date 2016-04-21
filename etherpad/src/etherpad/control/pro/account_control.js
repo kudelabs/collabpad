@@ -271,7 +271,8 @@ function render_sign_in_get() {
       inviteToken: contParams.token || request.params.inviteToken,
       googleSignInUrl: google_account.googleOAuth2URLForLogin(),
       isSubDomain: !domains.isPrimaryDomainRequest(),
-      asNewAccount: asNewAccount
+      asNewAccount: asNewAccount,
+      notice: getSession().accountSigninNotice
     };
 
   helpers.addBodyClass("mini-header");

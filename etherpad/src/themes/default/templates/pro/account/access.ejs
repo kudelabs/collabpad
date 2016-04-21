@@ -25,7 +25,7 @@
 <div class="accessbox" style="">
 
   <div class="accessboxinner">
-
+    <%- notice %>
     <script type="text/javascript" nonce="<%= helpers.cspNonce() %>">
       $(function() {
         if (document.location.hash) {
@@ -42,11 +42,10 @@
     <div style="display: block;" id="access-login-form"></div>
     <script type="text/javascript" nonce="<%= helpers.cspNonce() %>">
       $(function() {
-        modals.showModal('#page-login-box', 0, true /* undismissable */);
+        modals.showModal('#page-login-box', 0, false /* undismissable */);
         $('#faccountnav').hide();
       });
     </script>
-
     <div style="clear:both"></div>
   </div>
 </div>
