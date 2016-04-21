@@ -208,7 +208,17 @@ function render_as_post() {
 
   // Request access on their behalf
   var orgName = domains.getRequestDomainRecord().orgName;
-  setSigninNotice(SPAN(asAccount.email, " - is not a member of ", orgName,  ".", BR(), BR(), 'You can ', A({href: _requestToJoinUrl(asAccountId)}, 'request to join')));
+  var emailEl = "<strong>"+asAccount.email+"</strong>";
+  var orgNameEl = "<strong>" + orgName + "</strong>";
+  setSigninNotice(
+    "<h1 style=\"color: red;\">User Mismatch Error</h1><p>Sorry, you can't access this page right now because you are logged in as " +
+    emailEl +
+    ', but ' + emailEl +
+    ' is not a member of the team: ' + orgNameEl +
+    '</p>' +
+    '<p>It is possible that someone you know invited you with a different email address. You can ask that person to invite you using ' + emailEl + ', or you can ' +
+    A({href: _requestToJoinUrl(asAccountId)}, 'make a request') + '</p>'
+  );
 
   response.redirect("/ep/account/sign-in");
   return true;
@@ -1170,7 +1180,3 @@ function render_forgot_password_post() {
   saveSession();
   response.redirect(request.path);
 }
-
-
-
-

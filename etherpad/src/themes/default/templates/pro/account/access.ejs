@@ -25,7 +25,7 @@
 <div class="accessbox" style="">
 
   <div class="accessboxinner">
-    <%- notice %>
+    <%- notice ? notice : '' %>
     <script type="text/javascript" nonce="<%= helpers.cspNonce() %>">
       $(function() {
         if (document.location.hash) {
