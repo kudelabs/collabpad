@@ -13,7 +13,7 @@ function showSpaces(spacesInfo) {
       "data-subdomain": domain.subDomain,
       "data-lastlogindate": domain.lastLoginDate
     });
-    var link = $("<a/>").attr("href", domain.url).text(domain.id == 1 ? "hackpad" : domain.subDomain);
+    var link = $("<a/>").attr("href", domain.url).text(domain.id == 1 ? "Collab Pad" : domain.subDomain);
     if (location.href.indexOf(domain.url) == 0) {
       html.addClass("selected");
     }
