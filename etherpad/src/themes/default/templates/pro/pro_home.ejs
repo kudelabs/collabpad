@@ -69,11 +69,11 @@ limitations under the License. */ %>
 
   <% if (isNewSite) { %>
 
-    <h2 style="text-align: center; color: #777; padding-top: 20px;">This Hackpad Space is brand new.</h2>
+    <h2 style="text-align: center; color: #777; padding-top: 20px;">This Collabpad Space is brand new.</h2>
     <% if (!account) { %>
       <h2 style="text-align: center; color: #777;"><a href="#" data-click="showmodal" data-modal="#page-login-box">Sign In</a> to start collaborating.</h2>
     <% } else { %>
-      <h2 style="text-align: center; color: #777;"><a href="/ep/pad/newpad">Create a new hackpad</a> to get started.</h2>
+      <h2 style="text-align: center; color: #777;"><a href="/ep/pad/newpad">Create a new collabpad</a> to get started.</h2>
     <% } %>
 
   <% } else { %>
@@ -153,7 +153,7 @@ limitations under the License. */ %>
           <a class="rhs-menu-item <%= selectedIfSection('group'+groups[i].encryptedId) %>" title="<%= groups[i].name %>" href="/collection/<%= groups[i].encryptedId %>"><%= groups[i].name %></a></div>
           <% } %>
         <% } else { %>
-          <div class="small-sidebar-text">Add your hackpads to a collection to stay organized.</div>
+          <div class="small-sidebar-text">Add your collabpads to a collection to stay organized.</div>
         <% } %>
       </div>
 
