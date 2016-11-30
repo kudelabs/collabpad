@@ -209,7 +209,8 @@ function _sendPasswordChangeConfirmation() {
                                     });
   var fromAddr = pro_utils.getSupportEmailFromAddr();
 
-  sendEmail(getSessionProAccount().email, fromAddr, subj, null, body,"text/html; charset=utf-8");
+  // fix unable to change password, but it will not send reminder email.
+  // sendEmail(getSessionProAccount().email, fromAddr, subj, null, body,"text/html; charset=utf-8");
 }
 function render_update_password_post() {
 
