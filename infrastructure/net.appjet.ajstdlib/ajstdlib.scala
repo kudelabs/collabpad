@@ -245,6 +245,7 @@ object email {
         msg.setSubject(subject);
         msg.setContent(content, mimeType);
         Transport.send(msg);
+        "";
       }
     } catch {
       case e: MessagingException => { exceptionlog(e); e.printStackTrace() ; "Messaging exception: "+e.getMessage+"."; }

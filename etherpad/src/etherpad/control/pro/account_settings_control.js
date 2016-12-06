@@ -210,7 +210,8 @@ function _sendPasswordChangeConfirmation() {
   var fromAddr = pro_utils.getSupportEmailFromAddr();
 
   // fix unable to change password, but it will not send reminder email.
-  // sendEmail(getSessionProAccount().email, fromAddr, subj, null, body,"text/html; charset=utf-8");
+  // Doni: It's not helps, the function for sending email is working well, so I revert it
+  sendEmail(getSessionProAccount().email, fromAddr, subj, null, body,"text/html; charset=utf-8");
 }
 function render_update_password_post() {
 
