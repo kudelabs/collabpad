@@ -373,7 +373,8 @@ function _checkAccess(account) {
 }
 
 function setPassword(account, newPass) {
-  _checkAccess(account);
+  /* below will be fail with error message "access denied" when change password on temp login */
+  /* _checkAccess(account); */
   var passHash = computePasswordHash(newPass);
   sqlobj.update('pro_accounts', {id: account.id}, {passwordHash: passHash});
   markDirtySessionAccount(account.id);
