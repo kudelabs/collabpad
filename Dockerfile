@@ -1,20 +1,26 @@
-from ubuntu:14.04
+FROM java:7-jdk
 
-RUN apt-get -y update
+# Update for new versions
+ENV SCALA_VERSION 2.11.7
+ENV SBT_VERSION 0.13.8
 
-RUN apt-get install -yf \
-    openjdk-7-jdk \
-    mysql-server \
-    scala 
+# Scala
+RUN curl -O -L http://downloads.typesafe.com/scala/${SCALA_VERSION}/scala-${SCALA_VERSION}.tgz
+RUN tar xzvf scala-${SCALA_VERSION}.tgz
+RUN rm scala-${SCALA_VERSION}.tgz
 
-RUN mkdir /etc/hackpad
+ENV SCALA_HOME /scala-${SCALA_VERSION}
+ENV SCALA_LIBRARY_JAR /scala-${SCALA_VERSION}/lib/scala-library.jar
+ENV PATH ${SCALA_HOME}/bin:$PATH
+ENV JAVA_OPTS "-Xbootclasspath/p:../infrastructure/lib/rhino-js-1.7r3.jar:$SCALA_LIBRARY_JAR -Xmx1024M -Xms1024M"
+ENV JAVA "/usr/bin/java"
 
-VOLUME /etc/hackpad/src
+RUN mkdir /app
+ADD . /app/
 
-COPY bin/docker-entrypoint.sh /etc/hackpad/
-
-ENTRYPOINT ["/etc/hackpad/docker-entrypoint.sh"]
+WORKDIR /app
+RUN /app/bin/build.sh
 
 EXPOSE 9000
 
-CMD ["hackpad"]
+CMD ["/app/bin/run.sh"]
