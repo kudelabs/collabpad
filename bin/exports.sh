@@ -26,7 +26,7 @@
 # These lines assume you installed Scala via Homebrew.
 # export SCALA_HOME="/usr/local/Cellar/scala/2.11.7"
 # export SCALA_HOME="/usr/share/scala"
-export SCALA="$SCALA_HOME/bin/scala"
+# export SCALA="$SCALA_HOME/bin/scala"
 # export SCALA_LIBRARY_JAR="$SCALA_HOME/lib/scala-library.jar"
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home"
 # export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.71-2.b15.el7_2.x86_64/jre"
@@ -34,9 +34,9 @@ export JAVA="/usr/bin/java"
 
 ## The following lines should not need changing.
 
-export JAVA_OPTS="-Xbootclasspath/p:../infrastructure/lib/rhino-js-1.7r3.jar:$SCALA_LIBRARY_JAR"
+export JAVA_OPTS="-Xbootclasspath/p:../infrastructure/lib/rhino-js-1.7r3.jar:$SCALA_LIBRARY_JAR -Xmx1024M -Xms1024M"
 export MYSQL_CONNECTOR_JAR="$PWD/lib/mysql-connector-java-5.1.34-bin.jar"
-export PATH="$JAVA_HOME/bin:$SCALA_HOME/bin:$PATH"
+# export PATH="$JAVA_HOME/bin:$SCALA_HOME/bin:$PATH"
 
 if ! [ -e "$MYSQL_CONNECTOR_JAR" ]; then
         echo "MySql Connector jar '$MYSQL_CONNECTOR_JAR' not found - Download it here: http://dev.mysql.com/downloads/connector/j/3.1.html"
