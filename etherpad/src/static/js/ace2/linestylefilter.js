@@ -65,7 +65,7 @@ linestylefilter.className2Author = function(className) {
   return null;
 }
 
-var RELATIVE_URL_RE = new RegExp("^(/|https?://[\w\.]*hackpad.com).*");
+var RELATIVE_URL_RE = new RegExp("^(/|https?://[\w\.]*collab.cool).*");
 
 // lineLength is without newline; aline includes newline,
 // but may be falsy if lineLength == 0

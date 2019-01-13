@@ -387,7 +387,7 @@ var padchat = (function(){
             attr('title', clientVars.siteName).
             attr('data-room', 'site').
             append($('<img>').
-                attr('src', 'https://hackpad.com/static/favicon.ico')).
+                attr('src', 'https://collab.cool/static/favicon.ico')).
             append($('<span>').text(clientVars.siteName))
       );
 
@@ -399,7 +399,7 @@ var padchat = (function(){
             attr('title', clientVars.padTitle).
             attr('data-room', 'pad').
             append($('<img>').
-                attr('src', 'https://hackpad.com/static/favicon.ico')).
+                attr('src', 'https://collab.cool/static/favicon.ico')).
             append($('<span>').text(clientVars.padTitle))
       );
       */

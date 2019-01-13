@@ -463,7 +463,7 @@ function facebookOpenGraphMetadata(pageArgs) {
 
   addToHead('<meta property="og:title" content="' + escapeHtml(args.title) + '" />');
   addToHead('<meta property="og:description" content="' + escapeHtml(args.description) + '" />');
-  addToHead('<meta property="og:image" content="https://hackpad.com/static/img/hackpad-logo.png" />');
+  addToHead('<meta property="og:image" content="https://collab.cool/static/img/hackpad-logo.png" />');
   addToHead('<meta property="fb:app_id" content="' + appjet.config.facebookClientId + '" />');
   addToHead('<meta property="og:url" content="' + request.scheme+'://'+request.host+request.path+ '" />');
   addToHead('<meta property="og:type" content="' + args.type + '" />');
@@ -472,7 +472,7 @@ function facebookOpenGraphMetadata(pageArgs) {
 }
 
 function addDefaultMetadata() {
-  addToHead("<meta content='hackpad.com' name='title' />");
+  addToHead("<meta content='collab.cool' name='title' />");
   addToHead("<meta content='Real-time collaborative wiki' name='description' />");
   addToHead("<link href='/static/img/hackpad-logo.png' rel='image_src' />");
 }
@@ -623,7 +623,7 @@ function _getCSPPolicy() {
       "https://gist.github.com/"
     ],
     "frame-ancestors": [SELF],
-    "report-uri": ["https://hackpad.com/csp_log"],
+    "report-uri": ["https://collab.cool/csp_log"],
     "referrer": ["origin-when-crossorigin"]
   };
 

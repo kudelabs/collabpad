@@ -16,8 +16,8 @@
         hackpad: { 
             name: 'hackpad',
             tabTitle: 'HackPad',
-            url: 'https://hackpad.com/ep/pad/anon',
-            protoHostPort: 'https://hackpad.com'
+            url: 'https://collab.cool/ep/pad/anon',
+            protoHostPort: 'https://collab.cool'
         },
         test: {
             name: 'test',
