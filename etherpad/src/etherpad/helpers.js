@@ -302,41 +302,32 @@ function oemail(username) {
 }
 
 function googleAnalytics() {
+  if (!appjet.config.googleAnalyticsAccount ||
+      !appjet.config.googleAnalyticsDomainName ||
+      !isProduction() || _hd().suppressGA) {
+    return [
+    '<script type="text/javascript" nonce="' + cspNonce() + '">',
+      'var _gaq = _gaq || [];',
+    '</script>'
+    ].join('\n');
+  }
+
+  var userType = getSessionProAccount() ? "User" : "Guest";
+
   return [
-    '<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137844160-1"></script>',
-    '<script>',
-    'window.dataLayer = window.dataLayer || [];',
-    'function gtag(){dataLayer.push(arguments);}',
-    "gtag('js', new Date());",
-    "gtag('config', 'UA-137844160-1');",
+  '<script type="text/javascript" nonce="' + cspNonce() + '">',
+    'var _gaq = _gaq || [];',
+    '_gaq.push([\'_setAccount\', \'' + appjet.config.googleAnalyticsAccount + '\']);',
+    '_gaq.push([\'_setDomainName\', \'' + appjet.config.googleAnalyticsDomainName + '\']);',
+    '_gaq.push([\'_setCustomVar\', 1, \'User Type\', \''+userType+'\', 2]);',
+    '_gaq.push([\'_trackPageview\']);',
+    '(function() {',
+      'var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;',
+      'ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';',
+      'var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);',
+    '})();',
     '</script>'
   ].join('\n');
-  // if (!appjet.config.googleAnalyticsAccount ||
-  //     !appjet.config.googleAnalyticsDomainName ||
-  //     !isProduction() || _hd().suppressGA) {
-  //   return [
-  //   '<script type="text/javascript" nonce="' + cspNonce() + '">',
-  //     'var _gaq = _gaq || [];',
-  //   '</script>'
-  //   ].join('\n');
-  // }
-
-  // var userType = getSessionProAccount() ? "User" : "Guest";
-
-  // return [
-  // '<script type="text/javascript" nonce="' + cspNonce() + '">',
-  //   'var _gaq = _gaq || [];',
-  //   '_gaq.push([\'_setAccount\', \'' + appjet.config.googleAnalyticsAccount + '\']);',
-  //   '_gaq.push([\'_setDomainName\', \'' + appjet.config.googleAnalyticsDomainName + '\']);',
-  //   '_gaq.push([\'_setCustomVar\', 1, \'User Type\', \''+userType+'\', 2]);',
-  //   '_gaq.push([\'_trackPageview\']);',
-  //   '(function() {',
-  //     'var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;',
-  //     'ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';',
-  //     'var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);',
-  //   '})();',
-  //   '</script>'
-  // ].join('\n');
 }
 
 function isGuest() {
