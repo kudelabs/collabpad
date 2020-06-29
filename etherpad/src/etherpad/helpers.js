@@ -120,15 +120,13 @@ function includeJs(relpath) {
 
 function includeJQuery() {
   if (!_hd().includeJQueryJs) {
-    // if (isProduction()) {
+    if (isProduction()) {
       // use the google CDN version in production
-      // addToHead('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>');
-    // } else {
+      addToHead('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>');
+    } else {
     // use the local version otherwise
-
-    // Use the local version no matter production or not.
-    addToHead('<script src="/static/js/jquery-1.7.2.min.js" type="text/javascript"></script>');
-    //}
+     addToHead('<script src="/static/js/jquery-1.7.2.min.js" type="text/javascript"></script>');
+    }
     _hd().includeJQueryJs = true;
   }
 }
