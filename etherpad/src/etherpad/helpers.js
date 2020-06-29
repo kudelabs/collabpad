@@ -621,8 +621,8 @@ function _getCSPPolicy() {
       "https://gist.github.com/"
     ],
     "frame-ancestors": [SELF],
-    "report-uri": ["https://collab.cool/csp_log"],
-    "referrer": ["origin-when-crossorigin"]
+    "report-uri": ["https://collab.cool/csp_log"]
+    // "referrer": ["origin-when-crossorigin"]
   };
 
   if (cdn()) {
