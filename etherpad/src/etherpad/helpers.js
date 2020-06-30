@@ -613,6 +613,7 @@ function _getCSPPolicy() {
     "script-src": [SELF, UNSAFE_INLINE, "",
       "https://www.dropbox.com/static/api/1/dropins.js",
       "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js",
       "https://ssl.google-analytics.com/ga.js",
       "https://cdn.mxpnl.com/libs/mixpanel-2.1.min.js",
       "https://connect.facebook.net/en_US/all.js",
